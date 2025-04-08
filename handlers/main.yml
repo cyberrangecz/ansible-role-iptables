@@ -1,4 +1,2 @@
-
 - name: iptables_save
-  shell: iptables-save > /etc/iptables/rules.v4
-
+  shell: iptables-save | grep -v KUBE- | grep -v CNI- | grep -iv flannel > /etc/iptables/rules.v4
